@@ -1,0 +1,12 @@
+# Ignore build, output, and IDE files
+.gradle/
+build/
+*.class
+*.jar
+*.tar
+*.zip
+*.log
+.DS_Store
+
+# Ignore frames
+frames/

@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'com.myname'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.myname.oilpaintfilter.Main'
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+dependencies {
+    // Add your dependencies here, if any (e.g., testing libs)
+}
